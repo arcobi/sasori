@@ -18,25 +18,11 @@ const auto swerveFrameIdentifier = 0x123;
 // all 3 modules should use the same CAN CONTROLLER and access different functions to communicate
 
 
-struct CameraUpdateData {};
-
-struct CameraPosData {};
-
 class CanCommunicator {
-    public: 
+    public:
         void setup(int clockFrequency);
-
         void updateSwerve(SwerveUpdateData data);
-
-
         void onReceiveSwerve(CanFrame &frame);
-
-        void updateCamera(CameraUpdateData data);
-
-        void onReceiveCamera();
-
-        void reset();
-
 };
 
 extern CanCommunicator ESPcan;

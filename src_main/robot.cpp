@@ -3,21 +3,24 @@
 #include "hal/can_manager.h"
 #include "Bcontroller.h"
 #include <math.h>
-#include <cstdint> 
-
-void Robot::setup() {
-}
+#include <cstdint>
 
 Robot::Robot() {
 }
 
+void Robot::setup() {
+    arm.setup();
+    imu.setup();
+}
+
 void Robot::update() {
+    imu.update();
     this->updateSwerve();
     this->updateArm();
 }
 
 void Robot::updateArm() {
-
+    arm.update();
 }
 
 void Robot::updateSwerve() {
@@ -29,12 +32,7 @@ void Robot::updateSwerve() {
         data.lx = static_cast<int16_t>(BC.LastLJoyStickX);
         data.ly = static_cast<int16_t>(BC.LastLJoyStickY);
 
-        //old calculations
-        //data.targetAngleSpeed = sqrt(rx*rx + ry*ry) / 128.0;
-        //data.targetRelAngle = (BC->LastLJoyStickX != 0.0) ? atan(ry / rx) : data.targetRelAngle = 3.1415 / 2.0;
-        //data.targetRelSpeed = sqrt(lx*lx + ly*ly) / 128.0;
-
         ESPcan.updateSwerve(data);
-        BC.commandSent=true;
+        BC.commandSent = true;
     }
 }

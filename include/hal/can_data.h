@@ -24,18 +24,4 @@ struct __attribute__((packed))RobotRotData {
     int32_t theta;
 };
 
-struct BlockPos {
-    float angle; 
-    float offsetX;
-    float distanceY;
-    bool error;
-};
-struct LinePos {
-    float angle; 
-    float offsetX;
-    bool error;
-};
-
-
-
 #endif

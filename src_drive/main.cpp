@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include "swerve_controller.h"
 #include "hal/stm32_can_manager.h"
-#include "imu.h"
 
 
 SwerveController swerve;

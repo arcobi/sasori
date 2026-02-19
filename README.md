@@ -16,6 +16,7 @@ I was in charge of
 1) swerve / arm / bluetooth control code
 3) swerve drive design and assembly
 4) circuit design and implementation
+
 the following tasks were handled by my teammates: 
 1) robot body design
 2) arm design and assembly
